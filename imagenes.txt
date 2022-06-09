@@ -1,7 +1,5 @@
 adama traore.png
 Adams.PNG
-Adams2.PNG
-Adams3.PNG
 Adrien Rabiot.PNG
 aguero.PNG
 Akanji.PNG
@@ -62,7 +60,6 @@ cunha.PNG
 D james.PNG
 daka.PNG
 dani alves.PNG
-Dani Carvajal.PNG
 David Neres.PNG
 David silva.PNG
 david.PNG
@@ -193,7 +190,7 @@ Marcelo Brozovix.PNG
 marcelo.PNG
 Marco Asensio.PNG
 Marco Reus.PNG
-Marcos Acu�a.PNG
+Marcos Acuna.PNG
 marega.PNG
 Mario fernandes.PNG
 Mario hermoso.PNG
@@ -261,7 +258,7 @@ Saka.PNG
 sanchez.PNG
 Sane.PNG
 sarr.PNG
-Saul �iguez.PNG
+Saul niguez.PNG
 Savic.PNG
 shaw.PNG
 Simon Kjaer.PNG
@@ -310,4 +307,3 @@ Zaniolo.PNG
 zinchenko.PNG
 ziyech.PNG
 Zobnin.PNG
-Zobnin2.png
