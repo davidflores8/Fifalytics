@@ -23,9 +23,13 @@ for i in f:
     #imageE=cv2.equalizeHist(negro)
     #imageD=clahe.apply(imageE)
     
-    texto=pytesseract.image_to_string(negro,lang="eng")
-    print (texto)    
-    #cv2.imshow("image: ", negro) 
+    texto=pytesseract.image_to_string(image,lang="eng")
+    a=open ("./lista.txt","a")
+    a.write(str(texto).replace("\n",""))
+    a.write("\n")
+    a.close()
+
+    #cv2.imshow("image: ", image) 
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()    
 f.close
