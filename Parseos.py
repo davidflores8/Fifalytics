@@ -1,20 +1,27 @@
+from typing import SupportsIndex
+
+
 class Parser:
 
-    def atributos(cadena):
+    def atributos(cadena1):
         #aqui estan todas las lineas
-        cadena=cadena.split("\n")
+        cadena2=cadena1.split("\n")
+        cadena=[]
+        for a in cadena2:
+            if a!="":
+                cadena.append(a)
         #split por cada linea, ya se sabe que son 3 lineas
         #linea 1 (ritmo y regate)
         ritmo=cadena[0].replace("PAC)", " ")
+        ritmo=ritmo.replace("0R1", " ")
         ritmo=ritmo.replace("PAC|", " ")
         ritmo=ritmo.replace(")", "")
         ritmo=ritmo.replace(".", "")
         ritmo=ritmo.replace("PAC|", " ")
         ritmo=ritmo.replace("PAC=", " ")
         ritmo=ritmo.replace("PAC", " ")
-        ritmo=ritmo.replace("0R1", " ")
         ritmo=ritmo.replace("ORI", " ")
-        ritmo=ritmo.replace("OR1", " ")
+        ritmo=ritmo.replace("OR1", "")
         ritmo=ritmo.replace("DRI", " ")
         ritmo=ritmo.replace("DRL", " ")
         #correccion de caracteres comunes
@@ -28,10 +35,73 @@ class Parser:
         ritmo=ritmo.replace("O", "0")
         atribut=ritmo.split(" ")
         #linea 2
-        print("segunda linea")
-        print (cadena[1])
-        linea2=cadena[1].replace("SHO|","")
-        linea2=linea2.replace("SHO)","")
-        linea2=linea2.replace("SHO","")
-        list(atribut).append(linea2.split(" "))
-        return atribut
+        linea2=cadena[1].replace("SH0","")
+        linea2=linea2.replace("SHO"," ")
+        linea2=linea2.replace("Sil0"," ")
+        linea2=linea2.replace("SHO)"," ")
+        linea2=linea2.replace("SHo"," ")
+        linea2=linea2.replace("sHo"," ")
+        linea2=linea2.replace("sh0"," ")        
+        linea2=linea2.replace("DEF"," ")
+        linea2=linea2.replace("DEE"," ")  
+        linea2=linea2.replace("0EF"," ")
+        linea2=linea2.replace("0F"," ")
+        linea2=linea2.replace("0EF"," ")
+        linea2=linea2.replace("0F"," ")
+        linea2=linea2.replace("0EF"," ")
+        linea2=linea2.replace("0F"," ")
+        linea2=linea2.replace("0EF"," ")
+        linea2=linea2.replace("0F"," ")
+        linea2=linea2.replace("f"," ")
+        linea2=linea2.replace("|"," ")
+        linea2=linea2.replace(","," ")
+        linea2=linea2.replace(")"," ")
+        linea2=linea2.replace("."," ")
+        linea2=linea2.replace("g", "8")
+        linea2=linea2.replace("A", "4")
+        linea2=linea2.replace("B", "8")
+        linea2=linea2.replace("I", "1")
+        linea2=linea2.replace("T", "7")
+        linea2=linea2.replace("a", "8")
+        linea2=linea2.replace("Q", "8")
+        linea2=linea2.replace("O", "0")  
+        atribut+=linea2.split(" ")
+        
+        linea3=cadena[2].replace("PAS 1"," ")
+        linea3=linea3.replace("|"," ")
+        linea3=linea3.replace(" 1 "," ")
+        linea3=linea3.replace("PHY"," ")
+        linea3=linea3.replace("PRY"," ")
+        linea3=linea3.replace("PAS"," ")
+        linea3=linea3.replace("PaS"," ")
+        linea3=linea3.replace("OPAS"," ")
+        linea3=linea3.replace("PAY"," ")
+        linea3=linea3.replace("i", " ")
+        linea3=linea3.replace("pas"," ")
+        linea3=linea3.replace("-", " ")
+        linea3=linea3.replace("g", "8")
+        linea3=linea3.replace("A", "4")
+        linea3=linea3.replace("é", "6")
+        linea3=linea3.replace("n", "0")
+        linea3=linea3.replace("$", "8")
+        linea3=linea3.replace("B", "8")
+        linea3=linea3.replace("I", "1")
+        linea3=linea3.replace("T", "7")
+        linea3=linea3.replace("a", "8")
+        linea3=linea3.replace("Q", "8")
+        linea3=linea3.replace("O", "0")
+        linea3=linea3.replace("o", "0")
+        linea3=linea3.replace("S", "6")
+        linea3=linea3.replace("J", "7")
+        linea3=linea3.replace("_", "")
+        linea3=linea3.replace("&", "8")
+        linea3=linea3.replace("—", " ")
+        linea3=linea3.replace("——", " ")
+        linea3=linea3.replace(".", "")        
+        atribut+=linea3.split(" ")
+        #este es el retorno, pero hay que quitarle los espacios libres que se generan
+        retorno=[]
+        for i in atribut:
+            if i!="":
+                retorno.append(i)
+        return retorno
