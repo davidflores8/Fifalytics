@@ -1,30 +1,11 @@
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMS  81PAC | 73 DRI 48SHO | 74 DEF 70paS | 75 PHY  
-RABIOT 76PAC | 80 ORI 74SHO | 76 DEF 76PAS | 79 PHY. 
->, Se  Part AGUERO  7IPAC | 87 DRI 89SHO | 33 DEF 
-AKANJI  81PAC | 74 DRI 48SHO | 81 DEF 67 PAS | 77 PHY 
-AKE  76PAC | 71 DRI 53SHO | 80 DEF 70 PAS | 75 PHY 
-ALABA  Te 70SHO | 83 DEF a1PAS | 76 PHY 
-ALEX MORENO BBPAC | 77 ORI  60SHO | 71 DEF 71PAS | 64 PHY 
-ALEX SANDRO _  BIPAC | 79 ORI 65SHO | 78 DEF 77 PAS. | 79 PHY. 
-ALEX TELLES  83PAC | 78 DRI 73SHO | 77 DEF B2PAS | 73 PHY 
-ALLAN  72PAC | 82 DRI 71SHO | 80 DEF 77PAS | 79 PHY. 
-TALIOCA  8OPAC 83 DRI  83SHO | 52 DEF  B1PAS | 75 PHY a 
-- -_ ANDRE SILVA  T4PAC | 83 DRI 84SHO | 45 DEF 69 PAS | 77 PHY 
-BBPAC | 79 ORI 74SHO | 29 DEF — 6BPAS | 53 PHY 
-EBIC  86PAC | 81 ORI  83SHO | 48 DEF 75PAS | 80 PHY  “a — i 
-GRIEZMANN  BOPAC | 87 DRI 84SHO | 52 DEF B4PAS | 72 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMS  81PAC | 73 DRI 48SHO | 74 DEF 70paS | 75 PHY  
-RABIOT 76PAC | 80 ORI 74SHO | 76 DEF 76PAS | 79 PHY. 
->, Se  Part AGUERO  7IPAC | 87 DRI 89SHO | 33 DEF 
-AKANJI  81PAC | 74 DRI 48SHO | 81 DEF 67 PAS | 77 PHY 
-AKE  76PAC | 71 DRI 53SHO | 80 DEF 70 PAS | 75 PHY 
-ALABA  Te 70SHO | 83 DEF a1PAS | 76 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
-ADAMA TRAORE  96PAC | 86 ORI 66SHO | 38 DEF 67PAS | 81 PHY 
+que falló ,  Target no actuó a tiempo segun las vulnerabilidades de seguridad que presentaron, 
+por lo tanto el ataque se pudo ejecutar de forma exitosa por parte de los ciberdelincuentes
+
+4:19 p. m.
+es común? no debería de ser común en empresas de renombre, ya que se presupone que esas empresas ya 
+tienen planes elaborados para abordar las vulnerabilidades que puedan aparecer 
+
+4:21 p. m.
+¿Se podría haber hecho algo a tiempo para detener el ataque? si, tener métricas para evaluar vulnerabilidades 
+explotables y así poder actuar antes de una catastofre, ahorrando todas las molestias a los clientes y también 
+ahoorando los gatos innecesarios

@@ -1,0 +1,22 @@
+1. Como hacemos para clasificar los datos
+, porque como obtenemos puntajes en base a 100
+, como podríamos clasificarlos de forma que  obtener algo menos general.
+
+normalizacion y escala
+
+2. Los papers que pide para la presentación final, hay que comentarlos o 
+solamente listarlos
+
+buscar recortar las fotos
+ filtors de mediana para 5-10%
+ deteccion de cara y recortarla
+ 
+ towardsdatascience.com/face-detection-in-2-minutes-using-opencv-python-90f89d7c0f81
+ 
+ inverter a negro_blanco 255 -img
+ 
+ 
+ aguero
+ neres
+ militao
+ kesie
