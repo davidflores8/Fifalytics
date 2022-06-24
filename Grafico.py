@@ -63,8 +63,8 @@ def agarradatos(cadena):
     regate=regate.__round__()
     pase=pase.__round__()
     fisico=fisico.__round__()
-    #salida="Pace: ",Ritmo, "Dribbling: ",regate,"Shooting: ",tiro,"Defending: ",defensa,"Passing: ",pase," Physicality: ",fisico
-    salida="Ritmo: "+Ritmo+" Regate: "+regate
+    salida="Pace: ",Ritmo, "Dribbling: ",regate,"Shooting: ",tiro,"Defending: ",defensa,"Passing: ",pase," Physicality: ",fisico
+    
     print(salida)
     return salida
 
@@ -90,7 +90,7 @@ image_viewer_column =[
 STATS_viewer_column =[
 
     [sg.Text("lAS ESTADISTICAS DEL JUGADOR SON: ")],
-    [sg.Text(size=(20,20), key="-TEXTO-")],
+    [sg.Text(size=(25,10), key="-TEXTO-")],
 ]
 layout =[
     [
@@ -128,7 +128,7 @@ while True:
             window["-TOUT-"].update(filename)
             window["-IMAGE-"].update(filename=filename)
             window['-TEXTO-'].update(agarradatos(filename))            
-            
+            #
         except:
             pass
 window.close()
