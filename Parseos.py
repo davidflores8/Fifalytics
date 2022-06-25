@@ -1,5 +1,3 @@
-from typing import SupportsIndex
-
 
 class Parser:
 
