@@ -2,6 +2,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 from PrepareData import PrepareData
+import matplotlib.pyplot as plt
+import seaborn as sb
 
 class KNN():
 
@@ -26,8 +28,6 @@ class KNN():
         #Predice si Mbappe 
         #print(Bosque.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
 
-
-        
 
 k= KNN()
 k.KNNApplication()

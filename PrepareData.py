@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd    
@@ -5,11 +6,17 @@ import pandas as pd
 
 class PrepareData():
 
+    datos = NULL
+
+
+    def getDatos(self):
+        return self.datos
     
     def ScaleData(self, ruta):
         #Preparando los datos de los jugadores que queremos predecir.
         jugadores = pd.read_csv("./"+ruta)
         
+        self.datos=jugadores
         #Instanciamos la clase LabelEnconder para clasificar las posiciones de los jugadores.
         le_clase = LabelEncoder()
         

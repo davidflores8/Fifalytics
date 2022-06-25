@@ -6,17 +6,23 @@ from PrepareData import PrepareData
 class SVC():
 
     def SVCApplication(self):
+        #Instancia de clase para preparar cada uno de los datos
         prepare_training = PrepareData()
         training_data = prepare_training.ScaleData("Jugadores.csv")
         training_classes = prepare_training.getClasses("Jugadores.csv")
 
+        #Instancia de clase para preparar cada uno de los datos
         prepare_validation= PrepareData()
         validation_data = prepare_validation.ScaleData("validation_set.csv")
         validation_classes = prepare_validation.getClasses("validation_set.csv")
 
+        #Creación de Instancia de SVM se scikit learn.
         m = svm.SVC()
+
+        #Creación de modelo instanciado. 
         m.fit(training_data, training_classes)
 
+        #Impresión de algunas características del model obtenido.
         print("Accurracy: ", accuracy_score(validation_classes, m.predict(validation_data)))
         print("\n")   
         print("Classification Report: \n",classification_report(validation_classes, 
