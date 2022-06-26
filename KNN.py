@@ -8,26 +8,31 @@ import seaborn as sb
 class KNN():
 
 
-    def KNNApplication(self):
+    def KNNApplicationToValidation(self):
         
         prepare_training = PrepareData()
-        training_data = prepare_training.ScaleData("Jugadores.csv")
-        training_classes = prepare_training.getClasses("Jugadores.csv")
-
-        prepare_validation= PrepareData()
-        validation_data = prepare_validation.ScaleData("validation_set.csv")
-        validation_classes = prepare_validation.getClasses("validation_set.csv")
+        prepare_training.ScaleDataToValidation()
 
         knn = KNeighborsClassifier(n_neighbors=3)
-        knn.fit(training_data, training_classes)
-        print("Accurracy: ", accuracy_score(validation_classes, knn.predict(validation_data)))
+        knn.fit(prepare_training.training_data, prepare_training.classes)
+        print("Accurracy: ", accuracy_score(prepare_training.classes, knn.predict(prepare_training.training_data)))
         print("\n")   
-        print("Classification Report: \n",classification_report(validation_classes, 
-        knn.predict(validation_data)),"\n") 
+        print("Classification Report: \n",classification_report(prepare_training.classes, 
+        knn.predict(prepare_training.validation_data)),"\n") 
 
-        #Predice si Mbappe 
-        #print(Bosque.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
+    def KNNApplicationToPlayer(self):
+        
+        prepare_training = PrepareData()
+        prepare_training.ScaleDataToPlayer()
+
+        knn = KNeighborsClassifier(n_neighbors=3)
+        knn.fit(prepare_training.training_data, prepare_training.classes)
+
+        print("Classification Report: \n",classification_report(prepare_training.classes, 
+        knn.predict(prepare_training.player_data)),"\n") 
+
+        
 
 
 k= KNN()
-k.KNNApplication()
+k.KNNApplicationToValidation()
