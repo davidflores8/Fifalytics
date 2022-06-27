@@ -8,6 +8,8 @@ import pytesseract
 import numpy as np
 from Parseos import Parser  as psr
 from KNN import KNN
+from SVM import SVM
+from RandomForest import RandomForest
 
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Prestamo\AppData\Local\Programs\Tesseract-OCR\tesseract"
@@ -70,11 +72,44 @@ def agarradatos(cadena):
     salida="Pace: ",Ritmo, "Dribbling: ",regate,"Shooting: ",tiro,"Defending: ",defensa,"Passing: ",pase," Physicality: ",fisico
     print(salida)
     Jugador = ["-",Ritmo, regate, tiro, defensa, pase, fisico,"Delantero"]
-    print("pl",Jugador)
+    #print("pl",Jugador)
+    
     knn_classificator = KNN()
     knn_result = knn_classificator.KNNApplicationToPlayer(Jugador)
-    print("FUNCIONA MIERDA")
 
+    svm_classificator = SVM()
+    svm_result = svm_classificator.SVMApplicationToPlayer(Jugador)
+
+    random_forest_classificator = RandomForest()
+    random_forest_result = random_forest_classificator.RandomForestApplicationToPlayer(Jugador)
+
+    posicionRF= int (random_forest_result)
+    #0 defensa 2 medio 1 delantero
+    
+    if(posicionRF==1):
+        salida=salida," posicion Segun RF: DELANTERO"
+    elif(posicionRF==2):
+        salida=salida," posicion Segun RF: MEDIO CAMPO"
+    elif(posicionRF==0):
+        salida=salida," posicion Segun RF: DEFENSA"
+    posicionKNN= int (knn_result)
+    #0 defensa 2 medio 1 delantero
+    if(posicionKNN==1):
+        salida=salida," posicion Segun KNN: DELANTERO"
+    elif(posicionKNN==2):
+        salida=salida," posicion Segun KNN: MEDIO CAMPO"
+    elif(posicionKNN==0):
+        salida=salida," posicion Segun KNN: DEFENSA"
+    posicionSVM= int (svm_result)
+    #0 defensa 2 medio 1 delantero
+    if(posicionSVM==1):
+        salida=salida," posicion Segun SVM: DELANTERO"
+    elif(posicionSVM==2):
+        salida=salida," posicion Segun SVM: MEDIO CAMPO"
+    elif(posicionSVM==0):
+        salida=salida," posicion Segun SVM: DEFENSA"
+    print(salida)
+    
     return salida
 
 file_list_column=[
@@ -98,8 +133,8 @@ image_viewer_column =[
 ]
 STATS_viewer_column =[
 
-    [sg.Text("lAS ESTADISTICAS DEL JUGADOR SON: ")],
-    [sg.Text(size=(25,20), key="-TEXTO-")],
+    [sg.Text("LAS ESTADISTICAS DEL JUGADOR SON: ")],
+    [sg.Text(size=(25,30), key="-TEXTO-")],
 ]
 layout =[
     [

@@ -25,10 +25,10 @@ class SVM():
 
     '''
 
-    def SVMApplicationToPlayer(self):
+    def SVMApplicationToPlayer(self, player):
         #Instancia de clase para preparar cada uno de los datos
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToPlayer("data.csv")
+        prepare_training.ScaleDataToPlayer("data.csv",player)
 
         #Creación de Instancia de SVM se scikit learn.
         modelo = svm.SVC()
@@ -37,11 +37,13 @@ class SVM():
         modelo.fit(prepare_training.datos, prepare_training.classes)
 
         #Impresión de algunas características del model obtenido.
-        print("Classification Report: \n",classification_report(prepare_training.classes, 
+        print("Classification Report SVM: \n",classification_report(prepare_training.classes, 
             modelo.predict(prepare_training.datos)),"\n") 
 
-        print("Posicion de Mbappe: ",modelo.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
+        return (modelo.predict(prepare_training.player_data))   
 
-svm_predict = SVM()
-svm_result = svm_predict.SVMApplicationToPlayer()  
+        #print("Posicion de Mbappe: ",modelo.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
+
+#svm_predict = SVM()
+#svm_result = svm_predict.SVMApplicationToPlayer()  
   

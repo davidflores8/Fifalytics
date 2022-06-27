@@ -30,11 +30,13 @@ class KNN():
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(prepare_training.datos, prepare_training.classes)
 
-        print("Classification Report: \n",classification_report(prepare_training.classes, 
+        print("Classification Report KNN: \n",classification_report(prepare_training.classes, 
         knn.predict(prepare_training.datos)),"\n") 
 
-        print(prepare_training.player_data)
-        print(knn.predict(prepare_training.player_data))
+        #Jugador ya escalado
+        #print(prepare_training.player_data)
+
+        return (knn.predict(prepare_training.player_data))
 
         #print("Posicion de Mbappe: ",knn.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
     
