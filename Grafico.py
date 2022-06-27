@@ -8,10 +8,6 @@ import pytesseract
 import numpy as np
 from Parseos import Parser  as psr
 import PrepareData as PrepareData
-import KNN as KNN
-import RandomForest as RandomForest
-import SVM as SVM
-import pandas as pd
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Prestamo\AppData\Local\Programs\Tesseract-OCR\tesseract"
 
@@ -74,20 +70,7 @@ def agarradatos(cadena):
     print(salida)
     Jugador = ["-",Ritmo, regate, tiro, defensa, pase, fisico,"Delantero"]
     print("pl",Jugador)
-    #knn
-    knn_classificator = KNN()
-    print("hola2  ")
-    knn_result = knn_classificator.KNNAplicationToPlayer(Jugador)
-    print("holaknn")
-    '''#svm
-    svm_classificator = SVM()
-    svm_result = svm_classificator.SVMApplicationToPlayer()
-    print("hola svm")
-    #random
-    random_forest_classificator = RandomForest()
-    random_forest_result = random_forest_classificator.RandomForestApplicationToPlayer()
-    print("hola rf")
-    '''
+    
     return salida
 
 file_list_column=[

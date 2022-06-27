@@ -3,7 +3,8 @@ from random import random
 import numpy
 from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
-import pandas as pd  
+import pandas as pd
+from torch import classes  
 
 
 class PrepareData():
@@ -67,19 +68,21 @@ class PrepareData():
         self.classes = clases'''
 
         
-    def ScaleDataToPlayer(self, ruta, Jugador):
-        print("ScaleDataToPlayer")
+    def ScaleDataToPlayer(self, ruta):
         #Preparando los datos de los jugadores que queremos predecir.
         jugadores = pd.read_csv("./"+ruta)
         
-        self.datos=jugadores
+        #self.datos=jugadores
 
         #Codigo para insertar jugadores en el df
-        jugadores.loc[-1] = Jugador  # adding a row
+        jugadores.loc[-1] = ["HOLA",88,79,74,29,68,53,"Delantero"] # adding a row
         jugadores.index = jugadores.index + 1  # shifting index
         jugadores= jugadores.sort_index()
+        jugadores.to_csv('training.csv', index=False)
 
-        #print(jugadores)
+
+        jugadores = pd.read_csv("./training.csv")
+
         #Instanciamos la clase LabelEnconder para clasificar las posiciones de los jugadores.
         le_clase = LabelEncoder()
         
@@ -98,11 +101,13 @@ class PrepareData():
         data = jugadores_n.drop('clase', axis = 'columns')
         
         #Escalamos los datos en base al máximo y al mínimo, para fácil procesamiento por nuestro modelo. 
-        datos = preprocessing.MinMaxScaler().fit_transform(data)
+        datos_escalados = preprocessing.MinMaxScaler().fit_transform(data)
         #Datos listos para procesar
 
-        self.player_data = datos[0]
-        datos = numpy.delete(datos,0,0)
+        self.player_data = [datos_escalados[0]]
+        datos = numpy.delete(datos_escalados,0,0)
+        clases = clases.drop(0)
+
         self.datos = datos
         self.classes = clases
 

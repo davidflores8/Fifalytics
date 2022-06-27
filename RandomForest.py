@@ -36,20 +36,21 @@ class RandomForest():
         prepare_training = PrepareData()
         prepare_training.ScaleDataToPlayer("data.csv")
 
-        Bosque = RandomForestClassifier(n_estimators=6, max_depth=4)
-        Bosque.fit(prepare_training.training_data, prepare_training.classes)
+        Bosque = RandomForestClassifier(n_estimators=10, max_depth=8)
+        Bosque.fit(prepare_training.datos, prepare_training.classes)
  
         print("Classification Report: \n",classification_report(prepare_training.classes, 
-        Bosque.predict(prepare_training.player_data)),"\n") 
+        Bosque.predict(prepare_training.datos)),"\n") 
 
         
 
         #Predice si Mbappe 
-        #print(Bosque.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
+        print(Bosque.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
 
         '''for arbol in Bosque.estimators_:
             tree.plot_tree(arbol, feature_names=prepare_training.getDatos().columns[:-1])
             plt.show()'''
+
         
-        return Bosque.predict(prepare_training.player_data)
-        
+rf_predict = RandomForest()
+rf_resukt = rf_predict.RandomForestApplicationToPlayer() 
