@@ -68,14 +68,14 @@ class PrepareData():
         self.classes = clases'''
 
         
-    def ScaleDataToPlayer(self, ruta):
+    def ScaleDataToPlayer(self, ruta, Player):
         #Preparando los datos de los jugadores que queremos predecir.
         jugadores = pd.read_csv("./"+ruta)
         
         #self.datos=jugadores
 
         #Codigo para insertar jugadores en el df
-        jugadores.loc[-1] = ["HOLA",88,79,74,29,68,53,"Delantero"] # adding a row
+        jugadores.loc[-1] = Player # adding a row
         jugadores.index = jugadores.index + 1  # shifting index
         jugadores= jugadores.sort_index()
         jugadores.to_csv('training.csv', index=False)

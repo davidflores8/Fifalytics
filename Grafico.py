@@ -7,7 +7,8 @@ import cv2
 import pytesseract
 import numpy as np
 from Parseos import Parser  as psr
-import PrepareData as PrepareData
+from KNN import KNN
+
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Prestamo\AppData\Local\Programs\Tesseract-OCR\tesseract"
 
@@ -70,7 +71,10 @@ def agarradatos(cadena):
     print(salida)
     Jugador = ["-",Ritmo, regate, tiro, defensa, pase, fisico,"Delantero"]
     print("pl",Jugador)
-    
+    knn_classificator = KNN()
+    knn_result = knn_classificator.KNNApplicationToPlayer(Jugador)
+    print("FUNCIONA MIERDA")
+
     return salida
 
 file_list_column=[

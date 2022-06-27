@@ -22,10 +22,10 @@ class KNN():
         
     '''
 
-    def KNNApplicationToPlayer(self):
+    def KNNApplicationToPlayer(self, player):
         
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToPlayer("data.csv")
+        prepare_training.ScaleDataToPlayer("data.csv",player)
 
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(prepare_training.datos, prepare_training.classes)
@@ -38,5 +38,8 @@ class KNN():
 
         #print("Posicion de Mbappe: ",knn.predict([[1,1,0.89552239,0.17741935,0.70731707,0.83333333]]))
     
+#Jugador = ["Mbappe",97,92,88,36,80,77,"Delantero"]    
+#knn_classificator = KNN()
+#knn_result = knn_classificator.KNNApplicationToPlayer(Jugador)
 
     
