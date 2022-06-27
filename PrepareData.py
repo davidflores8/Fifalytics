@@ -18,7 +18,7 @@ class PrepareData():
     def getDatos(self):
         return self.datos
     
-    def ScaleDataToValidation(self, ruta):
+    '''def ScaleDataToValidation(self, ruta):
         #Preparando los datos de los jugadores que queremos predecir.
         jugadores = pd.read_csv("./"+ruta)
         
@@ -50,7 +50,7 @@ class PrepareData():
         validacion = datos
         datos_finales = datos
 
-        for i in range (304,-1,-1):
+        for i in range (303,-1,-1):
             if(i>98):
                 validacion = numpy.delete(validacion,i,0)
             elif(i<=98):
@@ -64,21 +64,22 @@ class PrepareData():
         self.datos = datos
         self.validation_data = validacion
         self.training_data = datos_finales
-        self.classes = clases
+        self.classes = clases'''
 
         
-    def ScaleDataToPlayer(self, ruta):
+    def ScaleDataToPlayer(self, ruta, Jugador):
+        print("ScaleDataToPlayer")
         #Preparando los datos de los jugadores que queremos predecir.
         jugadores = pd.read_csv("./"+ruta)
         
         self.datos=jugadores
 
         #Codigo para insertar jugadores en el df
-        '''jugadores.loc[-1] = ['DAVIDE',99, 99, 99, 99, 99, 99,'Delantero']  # adding a row
+        jugadores.loc[-1] = Jugador  # adding a row
         jugadores.index = jugadores.index + 1  # shifting index
-        jugadores= jugadores.sort_index()''' 
+        jugadores= jugadores.sort_index()
 
-        print(jugadores)
+        #print(jugadores)
         #Instanciamos la clase LabelEnconder para clasificar las posiciones de los jugadores.
         le_clase = LabelEncoder()
         
@@ -108,5 +109,3 @@ class PrepareData():
         #Guardar el training set en el archivo Training.csv
         #numpy.savetxt('Training.csv', datos, delimiter=',')
         
-p = PrepareData()
-p.ScaleDataToPlayer("data.csv")

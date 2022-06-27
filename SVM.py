@@ -3,16 +3,16 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from PrepareData import PrepareData
 
-class SVC():
+class SVM():
 
-    def SVCApplicationToValidation(self):
+    '''def SVCApplicationToValidation(self):
         #Instancia de clase para preparar cada uno de los datos
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToValidation()
+        prepare_training.ScaleDataToValidation("data.csv")
 
 
         #Creación de Instancia de SVM se scikit learn.
-        modelo = svm.SVC()
+        modelo = svm.SVM()
 
         #Creación de modelo instanciado. 
         modelo.fit(prepare_training.training_data, prepare_training.classes)
@@ -23,13 +23,15 @@ class SVC():
         print("Classification Report: \n",classification_report(prepare_training.classes, 
         modelo.predict(prepare_training.validation_data)),"\n") 
 
-    def SVCApplicationToPlayer(self):
+    '''
+
+    def SVMApplicationToPlayer(self):
         #Instancia de clase para preparar cada uno de los datos
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToPlayer()
+        prepare_training.ScaleDataToPlayer("data.csv")
 
         #Creación de Instancia de SVM se scikit learn.
-        modelo = svm.SVC()
+        modelo = svm.SVM()
 
         #Creación de modelo instanciado. 
         modelo.fit(prepare_training.training_data, prepare_training.classes)
@@ -37,7 +39,6 @@ class SVC():
         #Impresión de algunas características del model obtenido.
         print("Classification Report: \n",classification_report(prepare_training.classes, 
             modelo.predict(prepare_training.player_data)),"\n") 
-  
 
-svc_instance = SVC()
-svc_instance.SVCApplicationToValidation()
+        return modelo.predict(prepare_training.player_data)
+  

@@ -8,10 +8,10 @@ import seaborn as sb
 class KNN():
 
 
-    def KNNApplicationToValidation(self):
+    '''def KNNApplicationToValidation(self):
         
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToValidation()
+        prepare_training.ScaleDataToValidation("data.csv")
 
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(prepare_training.training_data, prepare_training.classes)
@@ -19,11 +19,13 @@ class KNN():
         print("\n")   
         print("Classification Report: \n",classification_report(prepare_training.classes, 
         knn.predict(prepare_training.validation_data)),"\n") 
+        
+    '''
 
-    def KNNApplicationToPlayer(self):
+    def KNNApplicationToPlayer(self, Jugador):
         
         prepare_training = PrepareData()
-        prepare_training.ScaleDataToPlayer()
+        prepare_training.ScaleDataToPlayer("data.csv", Jugador)
 
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(prepare_training.training_data, prepare_training.classes)
@@ -31,8 +33,7 @@ class KNN():
         print("Classification Report: \n",classification_report(prepare_training.classes, 
         knn.predict(prepare_training.player_data)),"\n") 
 
-        
 
-
-k= KNN()
-k.KNNApplicationToValidation()
+        return knn.predict(prepare_training.player)
+    
+    

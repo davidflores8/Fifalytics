@@ -1,10 +1,10 @@
 from cgi import print_arguments
 from cgitb import text
-import re
+
 from tkinter import image_names
-import pandas as pd
+
 import csv 
-from turtle import bgcolor
+
 import cv2
 import numpy as np
 import pytesseract
